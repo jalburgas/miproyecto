@@ -1,0 +1,38 @@
+{% extends 'blog/base.html' %}
+
+{% block titulo %}Inicio — Mi Blog{% endblock %}
+
+{% block contenido %}
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
+    <h1 class="display-5 fw-bold">¡Bienvenido a mi blog! 👋</h1>
+    <p class="lead">Esta es mi primera página hecha con Django. Aquí iré publicando contenido.</p>
+    <a class="btn btn-primary btn-lg" href="/blog/">Ver artículos</a>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Rápido</h5>
+                <p class="card-text">Django permite crear páginas web en minutos.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Seguro</h5>
+                <p class="card-text">Trae protección contra ataques comunes por defecto.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Escalable</h5>
+                <p class="card-text">Puedes crecer tu proyecto sin reescribirlo.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
