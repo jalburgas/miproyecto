@@ -3,36 +3,107 @@
 {% block titulo %}Inicio — Mi Blog{% endblock %}
 
 {% block contenido %}
-<div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
-    <h1 class="display-5 fw-bold">¡Bienvenido a mi blog! 👋</h1>
-    <p class="lead">Esta es mi primera página hecha con Django. Aquí iré publicando contenido.</p>
-    <a class="btn btn-primary btn-lg" href="/blog/">Ver artículos</a>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-            <div class="card-body">
-                <h5 class="card-title">Rápido</h5>
-                <p class="card-text">Django permite crear páginas web en minutos.</p>
+<!-- HERO con gradiente -->
+<section class="hero-gradient text-white rounded-4 p-5 mb-5 position-relative overflow-hidden">
+    <div class="position-relative" style="z-index: 2;">
+        <span class="badge bg-light text-dark mb-3 px-3 py-2 rounded-pill">
+            🚀 Hecho con Django
+        </span>
+        <h1 class="display-4 fw-bold mb-3">
+            Bienvenido a <span class="text-warning">Mi Blog</span>
+        </h1>
+        <p class="lead mb-4 opacity-75" style="max-width: 600px;">
+            Un espacio donde comparto ideas, tutoriales y proyectos.
+            Construido desde cero con Django y Bootstrap.
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+            <a href="/blog/" class="btn btn-light btn-lg px-4 fw-semibold">
+                📚 Ver artículos
+            </a>
+            <a href="/admin/" class="btn btn-outline-light btn-lg px-4">
+                ⚙️ Panel admin
+            </a>
+        </div>
+    </div>
+    <div class="hero-decoration"></div>
+</section>
+
+<!-- TARJETAS DE CARACTERÍSTICAS -->
+<section class="mb-5">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold">¿Por qué Django?</h2>
+        <p class="text-muted">Tres razones por las que este blog existe</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card-feature h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                <div class="feature-icon bg-primary-subtle text-primary mb-3">⚡</div>
+                <h5 class="fw-bold">Rápido</h5>
+                <p class="text-muted mb-0">Django permite crear páginas web en minutos, no en semanas.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-feature h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                <div class="feature-icon bg-success-subtle text-success mb-3">🔒</div>
+                <h5 class="fw-bold">Seguro</h5>
+                <p class="text-muted mb-0">Protección contra ataques comunes incluida por defecto.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-feature h-100 border-0 shadow-sm rounded-4 p-4 text-center">
+                <div class="feature-icon bg-warning-subtle text-warning mb-3">📈</div>
+                <h5 class="fw-bold">Escalable</h5>
+                <p class="text-muted mb-0">Crece tu proyecto sin reescribir una sola línea.</p>
             </div>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-            <div class="card-body">
-                <h5 class="card-title">Seguro</h5>
-                <p class="card-text">Trae protección contra ataques comunes por defecto.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-            <div class="card-body">
-                <h5 class="card-title">Escalable</h5>
-                <p class="card-text">Puedes crecer tu proyecto sin reescribirlo.</p>
-            </div>
-        </div>
-    </div>
-</div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="bg-dark text-white rounded-4 p-5 text-center">
+    <h2 class="fw-bold mb-3">¿Listo para leer?</h2>
+    <p class="opacity-75 mb-4">Explora los artículos publicados hasta ahora.</p>
+    <a href="/blog/" class="btn btn-warning btn-lg px-4 fw-semibold">
+        Ir al blog →
+    </a>
+</section>
+
+{% endblock %}
+
+{% block estilos_extra %}
+<style>
+    .hero-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 320px;
+    }
+    .hero-decoration {
+        position: absolute;
+        top: -50%;
+        right: -10%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: 1;
+    }
+    .feature-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto;
+    }
+    .card-feature {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-feature:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
+    }
+</style>
 {% endblock %}

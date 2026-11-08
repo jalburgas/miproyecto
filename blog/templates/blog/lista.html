@@ -7,6 +7,9 @@
 
 {% for articulo in articulos %}
     <div class="card mb-3 shadow-sm">
+        {% if articulo.imagen %}
+            <img src="{{ articulo.imagen.url }}" class="card-img-top" alt="{{ articulo.titulo }}">
+        {% endif %}
         <div class="card-body">
             <h2 class="h4 card-title">{{ articulo.titulo }}</h2>
             <p class="text-muted small">Publicado el {{ articulo.creado|date:"d/m/Y H:i" }}</p>
